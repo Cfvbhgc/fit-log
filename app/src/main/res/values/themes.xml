@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    themes.xml — App theme configuration.
+
+    Extends Material Components DayNight theme for Material Design widget styling.
+    DayNight enables automatic dark mode support (when values-night/themes.xml is added).
+
+    Uses the Material Components Bridge theme to get Material widget styling
+    while maintaining AppCompat compatibility for older widgets.
+
+    TODO: Add values-night/themes.xml for dark mode support
+    TODO: Add custom typography styles (TextAppearance)
+    TODO: Add shape theming for consistent corner radii
+-->
+<resources>
+
+    <style name="Theme.FitLog" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color — used for AppBar, FAB, buttons -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+
+        <!-- Secondary brand color — used for FAB, switches, sliders -->
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccent</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/statusBar</item>
+
+        <!-- Background and surface colors -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+
+        <!-- Text colors on primary/secondary surfaces -->
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="colorOnSurface">@android:color/black</item>
+    </style>
+
+</resources>

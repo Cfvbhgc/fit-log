@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    dimens.xml — Dimension values for consistent spacing and sizing.
+
+    Using dimension resources instead of hardcoded dp values ensures
+    consistency across all layouts and makes it easy to adjust spacing
+    globally. It also enables different dimensions for different screen
+    sizes (values-sw600dp/dimens.xml for tablets, etc.)
+
+    Spacing Scale:
+    - small: 8dp  (tight spacing, within components)
+    - medium: 16dp (standard spacing, between components)
+    - large: 24dp (generous spacing, between sections)
+    - xlarge: 48dp (extra spacing, empty states)
+
+    TODO: Add tablet-specific dimensions in values-sw600dp/dimens.xml
+-->
+<resources>
+    <!-- Spacing scale — used consistently throughout all layouts -->
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_xlarge">48dp</dimen>
+
+    <!-- Card styling dimensions -->
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+
+    <!-- FAB margin from screen edges -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Icon sizes -->
+    <dimen name="icon_size_small">24dp</dimen>
+    <dimen name="icon_size_medium">36dp</dimen>
+    <dimen name="icon_size_large">48dp</dimen>
+</resources>

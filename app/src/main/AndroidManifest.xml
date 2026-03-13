@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FitLog Android Manifest
+
+    This manifest declares all activities and the custom Application class.
+    We use a single MainActivity as the host for fragments (workout list, progress,
+    exercise library) and separate activities for add/edit flows that benefit from
+    their own back stack behavior.
+
+    TODO: Add WRITE_EXTERNAL_STORAGE permission if we add workout data export
+    TODO: Add POST_NOTIFICATIONS for workout reminder notifications (API 33+)
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name=".FitLogApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FitLog">
+
+        <!-- MainActivity hosts the BottomNavigationView and fragment container.
+             It serves as the primary entry point and navigation hub. -->
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- AddWorkoutActivity is launched from the FAB on the workout list.
+             It runs as a separate activity so we get a clean form experience
+             with its own back stack entry. -->
+        <activity
+            android:name=".ui.activity.AddWorkoutActivity"
+            android:label="@string/add_workout"
+            android:parentActivityName=".ui.activity.MainActivity" />
+
+        <!-- WorkoutDetailActivity shows a single workout with its exercises.
+             Users can add exercises and sets from this screen. -->
+        <activity
+            android:name=".ui.activity.WorkoutDetailActivity"
+            android:label="@string/workout_detail"
+            android:parentActivityName=".ui.activity.MainActivity" />
+
+    </application>
+
+</manifest>

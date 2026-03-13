@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    colors.xml — Color palette for the FitLog app.
+
+    Uses a fitness-themed color scheme with:
+    - Primary: Deep blue (trust, stability — appropriate for a tracking app)
+    - Accent: Energetic orange (motivation, energy — fitness theme)
+    - Workout type colors for visual categorization
+
+    Color naming convention:
+    - colorPrimary/Secondary: Material Design system colors
+    - workout_*: Workout type indicator colors
+    - chart_*: Chart-specific colors
+
+    TODO: Add dark theme colors with separate values-night/colors.xml
+-->
+<resources>
+    <!-- Material Design primary color — deep blue -->
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="colorPrimaryLight">#64B5F6</color>
+
+    <!-- Accent/secondary color — energetic orange -->
+    <color name="colorAccent">#FF6D00</color>
+    <color name="colorSecondary">#FF6D00</color>
+
+    <!-- Workout type indicator colors.
+         These appear as the thin vertical bar on workout list cards
+         for quick visual identification of workout categories. -->
+    <color name="workout_strength">#1976D2</color>   <!-- Blue — strength/weight training -->
+    <color name="workout_cardio">#D32F2F</color>      <!-- Red — cardio/endurance -->
+    <color name="workout_flexibility">#388E3C</color>  <!-- Green — flexibility/yoga -->
+
+    <!-- Chart colors for the progress screen -->
+    <color name="chart_line">#1976D2</color>
+    <color name="chart_fill">#641976D2</color>
+
+    <!-- Surface and background colors -->
+    <color name="surface">#FFFFFF</color>
+    <color name="background">#F5F5F5</color>
+
+    <!-- Status bar color -->
+    <color name="statusBar">#1565C0</color>
+</resources>

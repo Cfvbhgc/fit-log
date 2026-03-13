@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ic_launcher_foreground.xml — Adaptive icon foreground for the app launcher.
+
+    Draws a simple dumbbell shape using vector paths to represent the
+    fitness/workout theme. The dumbbell is a universally recognized
+    symbol for exercise and gym activities.
+
+    This foreground layer is used with an adaptive icon background
+    for Android 8.0+ (API 26+) launcher icon support.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Dumbbell bar (horizontal center bar) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,50 L74,50 L74,58 L34,58 Z" />
+
+    <!-- Left weight plate (outer) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M26,38 L34,38 L34,70 L26,70 Z" />
+
+    <!-- Left weight plate (inner/cap) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M22,42 L26,42 L26,66 L22,66 Z" />
+
+    <!-- Right weight plate (outer) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M74,38 L82,38 L82,70 L74,70 Z" />
+
+    <!-- Right weight plate (inner/cap) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M82,42 L86,42 L86,66 L82,66 Z" />
+
+</vector>

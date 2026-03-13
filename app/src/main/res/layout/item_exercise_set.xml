@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_exercise_set.xml — Single set row within an exercise card.
+
+    Displays: Set number | Reps | Weight | Delete button
+    Arranged in a horizontal LinearLayout with equal-weight text columns
+    for consistent alignment across all sets in an exercise.
+
+    This layout is used by ExerciseSetAdapter inside the nested RecyclerView
+    of each exercise card.
+
+    TODO: Add tap-to-edit functionality
+    TODO: Add completion checkbox
+    TODO: Add visual highlight for personal records
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="4dp">
+
+    <!-- Set number: "Set 1", "Set 2", etc. -->
+    <TextView
+        android:id="@+id/textSetNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="13sp"
+        android:textColor="?attr/colorOnSurface" />
+
+    <!-- Reps count: "10 reps" -->
+    <TextView
+        android:id="@+id/textReps"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="13sp"
+        android:textColor="?attr/colorOnSurface" />
+
+    <!-- Weight: "60 kg" -->
+    <TextView
+        android:id="@+id/textWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="13sp"
+        android:textColor="?attr/colorOnSurface" />
+
+    <!-- Delete set button — small icon button -->
+    <ImageButton
+        android:id="@+id/buttonDeleteSet"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/delete_set"
+        android:scaleType="centerInside"
+        android:padding="4dp"
+        app:tint="@android:color/darker_gray" />
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ic_workout.xml — Vector icon for the "Workouts" bottom navigation tab.
+
+    Represents a dumbbell/weight — the universal symbol for exercise.
+    Uses a 24dp viewport which is the Material Design standard for icons.
+    Color is set by the BottomNavigationView's tint, not here.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Simplified dumbbell icon -->
+    <!-- Horizontal bar -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M6.5,11 L17.5,11 L17.5,13 L6.5,13 Z" />
+
+    <!-- Left plate -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4.5,8 L6.5,8 L6.5,16 L4.5,16 Z" />
+
+    <!-- Left cap -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M3,9.5 L4.5,9.5 L4.5,14.5 L3,14.5 Z" />
+
+    <!-- Right plate -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M17.5,8 L19.5,8 L19.5,16 L17.5,16 Z" />
+
+    <!-- Right cap -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M19.5,9.5 L21,9.5 L21,14.5 L19.5,14.5 Z" />
+
+</vector>

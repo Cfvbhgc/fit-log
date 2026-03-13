@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_workout.xml — CardView layout for a single workout in the list.
+
+    Displays:
+    - Colored type indicator bar on the left edge
+    - Workout date (prominent)
+    - Workout type (colored text)
+    - Duration
+    - Notes preview (single line, ellipsized)
+
+    The type indicator is a thin colored View on the left side that provides
+    quick visual identification of workout types (strength=blue, cardio=red,
+    flexibility=green) without requiring the user to read the type text.
+
+    TODO: Add exercise count badge
+    TODO: Add total volume summary
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_small"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Type color indicator — a thin vertical bar showing workout type by color.
+             This provides an at-a-glance visual cue for workout categorization. -->
+        <View
+            android:id="@+id/viewTypeIndicator"
+            android:layout_width="6dp"
+            android:layout_height="match_parent"
+            android:background="@color/workout_strength" />
+
+        <!-- Workout content area -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <!-- Top row: Date and Duration -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/textWorkoutDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <TextView
+                    android:id="@+id/textWorkoutDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/darker_gray" />
+
+            </LinearLayout>
+
+            <!-- Workout type label (e.g., "Strength") -->
+            <TextView
+                android:id="@+id/textWorkoutType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textSize="13sp"
+                android:textColor="?attr/colorPrimary" />
+
+            <!-- Notes preview — single line with ellipsis for overflow -->
+            <TextView
+                android:id="@+id/textWorkoutNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="12sp"
+                android:textColor="@android:color/darker_gray"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

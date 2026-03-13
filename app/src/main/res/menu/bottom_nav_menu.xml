@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    bottom_nav_menu.xml — Menu items for the BottomNavigationView.
+
+    Three destinations matching the three main fragments:
+    1. Workouts — workout history list (default/home)
+    2. Progress — exercise weight progression charts
+    3. Library — browse all exercises performed
+
+    Each item uses a vector drawable icon for crisp rendering at all densities.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_workouts"
+        android:icon="@drawable/ic_workout"
+        android:title="@string/title_workouts" />
+
+    <item
+        android:id="@+id/nav_progress"
+        android:icon="@drawable/ic_progress"
+        android:title="@string/title_progress" />
+
+    <item
+        android:id="@+id/nav_library"
+        android:icon="@drawable/ic_library"
+        android:title="@string/title_library" />
+
+</menu>

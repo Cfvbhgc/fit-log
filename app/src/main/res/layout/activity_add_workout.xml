@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_add_workout.xml — Form layout for creating a new workout session.
+
+    Contains input fields for:
+    - Date selection (tappable TextInputLayout that opens a DatePickerDialog)
+    - Workout type dropdown (exposed dropdown menu with Material TextInputLayout)
+    - Optional notes (multi-line text field)
+    - Duration in minutes (number input)
+    - Save button
+
+    Uses Material Design TextInputLayout for consistent styling and hint animations.
+    The form scrolls vertically to accommodate different screen sizes.
+
+    TODO: Add workout template selector at the top
+    TODO: Add "Start Timer" button that auto-fills duration
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Toolbar with back navigation -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <!-- Scrollable form content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_large">
+
+            <!-- Date picker field — opens DatePickerDialog on tap.
+                 The end icon (calendar) also triggers the date picker. -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputDate"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                android:hint="@string/workout_date"
+                app:endIconMode="custom"
+                app:endIconDrawable="@android:drawable/ic_menu_today">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editWorkoutDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Workout type dropdown using Material exposed dropdown menu.
+                 AutoCompleteTextView with inputType=none creates a non-editable dropdown. -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputType"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                android:hint="@string/workout_type">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spinnerWorkoutType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Duration input field — accepts whole numbers (minutes) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputDuration"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                android:hint="@string/duration_minutes"
+                app:suffixText="min">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editWorkoutDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Notes field — multi-line text input for workout comments -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputNotes"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:hint="@string/notes_optional">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editWorkoutNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:gravity="top" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Save button — Material contained button for primary action -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSaveWorkout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/save_workout"
+                android:textAllCaps="false"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

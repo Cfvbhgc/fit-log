@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    strings.xml — All user-facing text strings for the FitLog app.
+
+    Centralizing strings here follows Android best practices and enables:
+    - Easy localization (just add values-XX/strings.xml for each language)
+    - Consistent text across the app
+    - No hardcoded strings in layouts or code
+
+    TODO: Add translations for major languages (es, de, fr, ja, zh)
+-->
+<resources>
+    <!-- App name and navigation titles -->
+    <string name="app_name">FitLog</string>
+    <string name="title_workouts">Workouts</string>
+    <string name="title_progress">Progress</string>
+    <string name="title_library">Exercise Library</string>
+
+    <!-- Workout form -->
+    <string name="add_workout">Add Workout</string>
+    <string name="workout_date">Workout Date</string>
+    <string name="workout_type">Workout Type</string>
+    <string name="duration_minutes">Duration (minutes)</string>
+    <string name="notes_optional">Notes (optional)</string>
+    <string name="save_workout">Save Workout</string>
+    <string name="saving">Saving…</string>
+
+    <!-- Workout detail -->
+    <string name="workout_detail">Workout Detail</string>
+    <string name="exercises">Exercises</string>
+    <string name="add_exercise">Add Exercise</string>
+    <string name="add_set">+ Add Set</string>
+    <string name="exercise_name">Exercise Name</string>
+    <string name="reps">Reps</string>
+    <string name="weight_kg">Weight (kg)</string>
+    <string name="no_notes">No notes</string>
+    <string name="no_exercises_yet">No exercises yet. Tap + to add one!</string>
+
+    <!-- Table headers for the set list -->
+    <string name="set_header">SET</string>
+    <string name="reps_header">REPS</string>
+    <string name="weight_header">WEIGHT</string>
+
+    <!-- Delete confirmations -->
+    <string name="delete_workout">Delete Workout</string>
+    <string name="delete_workout_confirmation">Are you sure you want to delete this workout? All exercises and sets will be permanently removed.</string>
+    <string name="delete_exercise">Delete Exercise</string>
+    <string name="delete_set">Delete Set</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Empty states -->
+    <string name="no_workouts_yet">No workouts yet.\nTap + to create your first workout!</string>
+    <string name="no_progress_data">No progress data for this exercise yet.\nLog more workouts to see your progress!</string>
+    <string name="no_exercises_logged">No exercises logged yet.\nCreate a workout and add exercises to build your library.</string>
+    <string name="empty_library">Your exercise library is empty.\nExercises will appear here as you log workouts.</string>
+
+    <!-- Filter -->
+    <string name="filter_by_type">Filter:</string>
+
+    <!-- Progress screen -->
+    <string name="exercise_label">Exercise:</string>
+    <string name="select_exercise_for_progress">Select an exercise to view progress</string>
+
+    <!-- Exercise library -->
+    <string name="search_exercises">Search exercises…</string>
+</resources>

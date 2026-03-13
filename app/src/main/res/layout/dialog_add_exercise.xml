@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    dialog_add_exercise.xml — Form for adding a new exercise to a workout.
+
+    Fields:
+    - Exercise name (required) — TextInputLayout with outlined box style
+    - Notes (optional) — multi-line text input
+
+    This layout is inflated inside AddExerciseDialog (DialogFragment) and
+    set as the AlertDialog's custom view.
+
+    TODO: Add autocomplete suggestions from the exercise library
+    TODO: Add muscle group category selector
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_large">
+
+    <!-- Exercise name input — required field -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:hint="@string/exercise_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editExerciseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Exercise notes — optional field -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/notes_optional">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editExerciseNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:gravity="top" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

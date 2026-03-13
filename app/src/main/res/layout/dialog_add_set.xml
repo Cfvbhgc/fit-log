@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    dialog_add_set.xml — Form for adding a new set to an exercise.
+
+    Fields:
+    - Reps (required) — number input
+    - Weight (required) — decimal number input with "kg" suffix
+
+    This layout is inflated inside AddSetDialog (DialogFragment) and set
+    as the AlertDialog's custom view.
+
+    TODO: Add "Copy Previous Set" button to duplicate the last set's values
+    TODO: Add +/- increment buttons for quick weight adjustment
+    TODO: Add RPE (Rate of Perceived Exertion) slider
+    TODO: Add unit toggle (kg / lbs)
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_large">
+
+    <!-- Reps input — whole numbers only -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:hint="@string/reps">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editReps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Weight input — decimal numbers for fractional plates (e.g., 2.5kg) -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/weight_kg"
+        app:suffixText="kg">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

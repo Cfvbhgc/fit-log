@@ -1,0 +1,68 @@
+# FitLog - Version Catalog
+# Centralizes all dependency versions in one place for easy management.
+# This is the modern Gradle approach replacing the old ext {} block pattern.
+# Each library is defined once here and referenced in build.gradle.kts files.
+
+[versions]
+# Core Android
+agp = "8.2.0"
+kotlin = "1.9.21"
+ksp = "1.9.21-1.0.16"
+coreKtx = "1.12.0"
+appcompat = "1.6.1"
+
+# UI Components
+material = "1.11.0"
+constraintlayout = "2.1.4"
+recyclerview = "1.3.2"
+cardview = "1.0.0"
+fragment = "1.6.2"
+
+# Room Database — our local persistence layer
+room = "2.6.1"
+
+# Coroutines — for async operations (Room queries, etc.)
+coroutines = "1.7.3"
+
+# MPAndroidChart — for rendering line charts of exercise progress
+mpandroidchart = "v3.1.0"
+
+# Lifecycle — for lifecycle-aware components
+lifecycle = "2.7.0"
+
+# Navigation — optional, we primarily use fragment transactions
+navigation = "2.7.6"
+
+[libraries]
+# AndroidX Core
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
+# Material Design Components — provides themed widgets, FAB, BottomNav, etc.
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# Layout & Views
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
+
+# Room Database — compile-time verified SQL with Kotlin coroutine support
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+# Kotlin Coroutines — structured concurrency for background tasks
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# MPAndroidChart — feature-rich charting library
+mpandroidchart = { group = "com.github.PhilJay", name = "MPAndroidChart", version.ref = "mpandroidchart" }
+
+# Lifecycle
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

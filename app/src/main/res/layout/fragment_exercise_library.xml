@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_exercise_library.xml — Exercise library with search.
+
+    Layout Structure:
+    - SearchView at the top for filtering exercises by name
+    - RecyclerView for exercise library items
+    - Empty state text when library is empty or search has no results
+    - Loading progress bar
+
+    The exercise library shows all distinct exercises the user has ever
+    performed, with a count of how many times each was used.
+
+    TODO: Add category tabs (All, Strength, Cardio, etc.)
+    TODO: Add sorting options (alphabetical, most used, recently added)
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- SearchView for filtering exercises by name.
+         Wrapped in a CardView for visual consistency with other screens. -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="2dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="@string/search_exercises"
+            android:iconifiedByDefault="false" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <!-- Empty library message -->
+    <TextView
+        android:id="@+id/textEmptyLibrary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/empty_library"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:padding="@dimen/spacing_xlarge"
+        android:visibility="gone" />
+
+    <!-- Exercise list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewLibrary"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="@dimen/spacing_small" />
+
+</LinearLayout>

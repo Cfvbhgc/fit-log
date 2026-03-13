@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_workout_list.xml — Workout history list with filter and FAB.
+
+    Layout Structure:
+    - Filter spinner at the top (All / Strength / Cardio / Flexibility)
+    - RecyclerView for workout cards (main content)
+    - Empty state text (shown when no workouts match filter)
+    - Progress bar (shown during loading)
+    - FAB at bottom-right for creating new workouts
+
+    Uses FrameLayout as root for simplicity — ConstraintLayout would be
+    overkill for this straightforward vertical stack with an overlaid FAB.
+
+    TODO: Add SwipeRefreshLayout for pull-to-refresh
+    TODO: Add search bar for searching workout notes
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Filter spinner — allows filtering workouts by type.
+             Wrapped in a CardView for visual separation from the list. -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_small"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/spacing_small">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_by_type"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="@dimen/spacing_small" />
+
+                <Spinner
+                    android:id="@+id/spinnerFilter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Loading indicator — centered in the remaining space -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <!-- Empty state message — shown when no workouts exist or match filter -->
+        <TextView
+            android:id="@+id/textEmptyState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_workouts_yet"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            android:padding="@dimen/spacing_xlarge"
+            android:visibility="gone" />
+
+        <!-- Workout list — each item is a MaterialCardView (item_workout.xml) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewWorkouts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:padding="@dimen/spacing_small"
+            android:paddingBottom="72dp" />
+
+    </LinearLayout>
+
+    <!-- FAB for creating new workouts — anchored at bottom-right.
+         Uses FrameLayout gravity since we're not in a CoordinatorLayout. -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/add_workout"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:tint="@android:color/white" />
+
+</FrameLayout>

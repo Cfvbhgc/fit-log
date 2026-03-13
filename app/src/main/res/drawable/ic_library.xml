@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ic_library.xml — Vector icon for the "Library" bottom navigation tab.
+
+    Represents a list/menu — communicates a collection of items, which is
+    appropriate for an exercise library/catalog.
+    Standard 24dp Material Design icon size.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- List/catalog icon — three lines with bullet points -->
+    <!-- Top item -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4,6 A1.5,1.5 0 1,1 4,5.99 Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M8,5 L20,5 L20,7 L8,7 Z" />
+
+    <!-- Middle item -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4,12 A1.5,1.5 0 1,1 4,11.99 Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M8,11 L20,11 L20,13 L8,13 Z" />
+
+    <!-- Bottom item -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4,18 A1.5,1.5 0 1,1 4,17.99 Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M8,17 L20,17 L20,19 L8,19 Z" />
+
+</vector>

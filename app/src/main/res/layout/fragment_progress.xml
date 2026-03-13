@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_progress.xml — Progress chart screen with exercise selector.
+
+    Layout Structure:
+    - Exercise selector spinner at the top
+    - MPAndroidChart LineChart (main content area)
+    - "No data" text for empty states
+    - Loading progress bar
+
+    The chart takes up most of the screen to give users a clear view of
+    their weight progression over time.
+
+    TODO: Add date range filter (last month, 3 months, 6 months, all time)
+    TODO: Add chart type toggle (line, bar, scatter)
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_medium">
+
+    <!-- Exercise selector dropdown.
+         Users pick which exercise to view the progress chart for. -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="@dimen/spacing_small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exercise_label"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="@dimen/spacing_small" />
+
+            <Spinner
+                android:id="@+id/spinnerExercise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <!-- "No data" message — shown when no progress data exists -->
+    <TextView
+        android:id="@+id/textNoProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_progress_data"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:padding="@dimen/spacing_xlarge"
+        android:visibility="gone" />
+
+    <!-- MPAndroidChart LineChart — displays weight progression over time.
+         Takes up all remaining vertical space for maximum chart visibility. -->
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
